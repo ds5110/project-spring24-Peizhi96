@@ -24,7 +24,7 @@ Peizhi Yan(Team Leader, Username: Peizhi96), Zhicun Chen, Zican Hao
 
 ## Data source:
 
-* Local fish data:
+### Local fish data:
 1.	Get to website: https://www.fisheries.noaa.gov/foss/f?p=215:200:2757927145587:::::
 2.	Select ‘Commercial’ for ‘Data Set’.
 3.	Select all the years available by clicking on ‘>>’ button.
@@ -36,7 +36,7 @@ Peizhi Yan(Team Leader, Username: Peizhi96), Zhicun Chen, Zican Hao
 9.	Click on ‘Actions’ -> ‘Download’ -> ‘CSV’ -> ‘Download’.
 10.	The data file ‘FOSS_landings.csv’ will be downloaded.
 
-* Imported fish data:
+### Imported fish data:
 1.	Get to website: https://www.fisheries.noaa.gov/foss/f?p=215:2:2757927145587:::::
 2.	Select ‘Imports’ for ‘Trade Type’.
 3.	Select ‘Annual’ for ‘Time range’.
