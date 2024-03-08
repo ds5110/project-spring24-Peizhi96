@@ -19,10 +19,10 @@
   * NOAA Landings and Foreign Trade: https://www.fisheries.noaa.gov/foss/f?p=215:2:5473541341067
 
 
-## Team Member:
+## Team Member
 Peizhi Yan(Team Leader, Username: Peizhi96), Zhicun Chen, Zican Hao
 
-## Data source:
+## Data source
 
 ### Local fish data:
 1.	Get to website: https://www.fisheries.noaa.gov/foss/f?p=215:200:2757927145587:::::
