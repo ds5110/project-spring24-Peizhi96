@@ -22,6 +22,36 @@
 ## Team Member:
 Peizhi Yan(Team Leader, Username: Peizhi96), Zhicun Chen, Zican Hao
 
+## Data source:
+
+* Local fish data:
+1.	Get to website: https://www.fisheries.noaa.gov/foss/f?p=215:200:2757927145587:::::
+2.	Select ‘Commercial’ for ‘Data Set’.
+3.	Select all the years available by clicking on ‘>>’ button.
+4.	Select ‘NMFS Regions’ for ‘Region Type’.
+5.	Select ‘New England’ for ‘State Landed’.
+6.	Select ‘All species’ for ‘Species’.
+7.	Select ‘TOTALS BY YEAR/STATE/SPECIES’ for report format.
+8.	Click on ‘RUN REPORT’.
+9.	Click on ‘Actions’ -> ‘Download’ -> ‘CSV’ -> ‘Download’.
+10.	The data file ‘FOSS_landings.csv’ will be downloaded.
+
+* Imported fish data:
+1.	Get to website: https://www.fisheries.noaa.gov/foss/f?p=215:2:2757927145587:::::
+2.	Select ‘Imports’ for ‘Trade Type’.
+3.	Select ‘Annual’ for ‘Time range’.
+4.	Select all the years available by clicking on ‘>>’ button.
+5.	Select ‘Country’ for ‘Geographic Scale’.
+6.	Select all the Northeast Atlantic countries: Belgium, Denmark, Finland, France, Germany, Germany(East), Ireland, Iceland, Luxembourg, Netherlands,  Norway, Portugal, Spain, Sweden, Switzerland, United Kingdom.
+7.	Select ‘Product’ for ‘Product Type’.
+8.	Select ‘GROUNDFISH(ALL)’ for ‘Product’.
+9.	Select ‘TOTALS BY YEAR/PRODUCT/COUNTRY’ for report format.
+10.	Click on ‘RUN REPORT’.
+11.	Click on ‘Actions’ -> ‘Download’ -> ‘CSV’ -> ‘Download’.
+12.	The data file ‘ANNUAL TRADE-YEAR-PRODUCT-COUNTRY.csv’ will be downloaded.
+
+
+
 
 
 
