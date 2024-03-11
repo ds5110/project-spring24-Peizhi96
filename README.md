@@ -51,6 +51,7 @@ Peizhi Yan(Team Leader, Username: Peizhi96), Zhicun Chen, Zican Hao
 12.	The data file ‘ANNUAL TRADE-YEAR-PRODUCT-COUNTRY.csv’ will be downloaded.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 ### Data Visualization
@@ -75,13 +76,11 @@ Maximum Volume (kg): Represented by the blue bars, this indicates the heaviest s
 Maximum Value (USD): Illustrated by the red line with markers, this reflects the most valuable single shipment of a product for each year. Unlike the volume, the value shows a generally increasing trend over the years, suggesting that either the products are becoming more valuable, costs are increasing, or perhaps more expensive products are being shipped.
 
 <img src="figs/F2.png" width=350>
+=======
 
-The blue bars represent the maximum volume of products imported from each of these top 10 countries in kilograms. This gives an insight into which countries are major suppliers in terms of the sheer weight of goods.
 
-The red line with markers indicates the maximum value in USD of products imported from each country. This highlights the countries from which the most valuable shipments originate, in terms of monetary value.
+>>>>>>> parent of 32655b2 (update)
 
-<img src="figs/F3.png" width=350>
 
-Volume (kg): Represented by blue bars, this indicates which of the top 10 products are imported in the largest quantities. The length of each bar signifies the maximum volume for each product category.
 
-Value (USD): The red markers show the maximum import value of these top products. The position of each marker provides insight into the economic value associated with the maximum shipment volume of each product.
+
