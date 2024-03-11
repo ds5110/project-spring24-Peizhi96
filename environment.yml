@@ -1,0 +1,20 @@
+name: myenv
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - conda-content-trust
+  - conda-libmamba-solver
+  - conda==23.11.0
+  - git
+  - make
+  - menuinst
+  - openssh
+  - pandas
+  - pip
+  - python.app
+  - python=3.11
+  - seaborn
+  - setuptools
+  - wheel
+prefix: /usr/local/Caskroom/miniconda/base/envs/myenv

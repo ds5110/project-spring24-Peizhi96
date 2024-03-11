@@ -50,6 +50,12 @@ Peizhi Yan(Team Leader, Username: Peizhi96), Zhicun Chen, Zican Hao
 11.	Click on ‘Actions’ -> ‘Download’ -> ‘CSV’ -> ‘Download’.
 12.	The data file ‘ANNUAL TRADE-YEAR-PRODUCT-COUNTRY.csv’ will be downloaded.
 
+### Data Graphs
+Maine groundfish market by year:
+![graph2](./figs/landings_maine.png)
+
+New England groundfish market by year:
+![graph1](./figs/landings_new_england.png)
 
 
 
