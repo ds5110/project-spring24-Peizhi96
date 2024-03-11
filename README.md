@@ -51,6 +51,20 @@ Peizhi Yan(Team Leader, Username: Peizhi96), Zhicun Chen, Zican Hao
 12.	The data file ‘ANNUAL TRADE-YEAR-PRODUCT-COUNTRY.csv’ will be downloaded.
 
 <<<<<<< HEAD
+
+=======
+### Data Visualization
+```
+landings
+```
+Maine groundfish market by year:
+![graph2](./figs/landings_maine.png)
+
+New England groundfish market by year:
+![graph1](./figs/landings_new_england.png)
+>>>>>>> 2eefc649c9c76609930c9a07e670713dff460339
+
+
 ```
 make north_atlantic
 ```
@@ -59,15 +73,6 @@ make north_atlantic
 Maximum Volume (kg): Represented by the blue bars, this indicates the heaviest single shipment of a product in that year. The volume shows fluctuations over the years, with some years seeing significantly higher maximum volumes than others. There isn't a clear trend in volume; it varies from year to year without a consistent increase or decrease.
 
 Maximum Value (USD): Illustrated by the red line with markers, this reflects the most valuable single shipment of a product for each year. Unlike the volume, the value shows a generally increasing trend over the years, suggesting that either the products are becoming more valuable, costs are increasing, or perhaps more expensive products are being shipped.
-=======
-### Data Visualization
-Maine groundfish market by year:
-![graph2](./figs/landings_maine.png)
-
-New England groundfish market by year:
-![graph1](./figs/landings_new_england.png)
->>>>>>> 2eefc649c9c76609930c9a07e670713dff460339
-
 
 <img src="figs/F2.png" width=350>
 

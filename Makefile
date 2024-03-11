@@ -9,10 +9,10 @@ $(DATA):
 	curl -o $(DATA)
 	
 north_atlantic:
-	python src/preprocess.py
-	python src/north_eastern_by_year.py
-	python src/north_eastern_by_country.py
-	python src/north_eastern_by_product.py
+	python src/eda2/preprocess.py
+	python src/eda2/north_eastern_by_year.py
+	python src/eda2/north_eastern_by_country.py
+	python src/eda2/north_eastern_by_product.py
 
 =======
 landings:
