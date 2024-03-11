@@ -70,10 +70,6 @@ Maximum Volume (kg): Represented by the blue bars, this indicates the heaviest s
 Maximum Value (USD): Illustrated by the red line with markers, this reflects the most valuable single shipment of a product for each year. Unlike the volume, the value shows a generally increasing trend over the years, suggesting that either the products are becoming more valuable, costs are increasing, or perhaps more expensive products are being shipped.
 
 <img src="figs/F2.png" width=350>
-=======
-
-
->>>>>>> parent of 32655b2 (update)
 
 
 
