@@ -3,8 +3,6 @@ import matplotlib.pyplot as plt
 
 df = pd.read_csv("data/processed_NE_data.csv")
 
-
-
 max_volume_per_year = df.groupby('Year')['Volume (kg)'].max()
 max_value_per_year = df.groupby('Year')['Value (USD)'].max()
 

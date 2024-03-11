@@ -1,9 +1,5 @@
 <<<<<<< HEAD
-<<<<<<< HEAD
 name: base
-=======
-name: myenv
->>>>>>> 2eefc649c9c76609930c9a07e670713dff460339
 =======
 name: myenv
 >>>>>>> 2eefc649c9c76609930c9a07e670713dff460339
@@ -11,7 +7,6 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-<<<<<<< HEAD
 <<<<<<< HEAD
   - make=4.3=h620ffc9_1
   - matplotlib=3.8.2=py311ha1ab1f8_0
@@ -24,8 +19,6 @@ dependencies:
   
 prefix: /Users/Peizhi/miniconda3
 =======
-=======
->>>>>>> 2eefc649c9c76609930c9a07e670713dff460339
   - conda-content-trust
   - conda-libmamba-solver
   - conda==23.11.0
@@ -41,7 +34,4 @@ prefix: /Users/Peizhi/miniconda3
   - setuptools
   - wheel
 prefix: /usr/local/Caskroom/miniconda/base/envs/myenv
-<<<<<<< HEAD
->>>>>>> 2eefc649c9c76609930c9a07e670713dff460339
-=======
 >>>>>>> 2eefc649c9c76609930c9a07e670713dff460339
