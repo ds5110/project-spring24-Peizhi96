@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 DATA = $(PWD)/data/ANNUAL_TRADE_YEAR_PRODUCT_COUNTRY.csv
 
 $(DATA):
@@ -13,3 +14,8 @@ north_atlantic:
 	python src/north_eastern_by_country.py
 	python src/north_eastern_by_product.py
 
+=======
+landings:
+	python -b src/eda/graph1.py
+	python -b src/eda/graph2.py
+>>>>>>> 2eefc649c9c76609930c9a07e670713dff460339

@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 name: base
+=======
+name: myenv
+>>>>>>> 2eefc649c9c76609930c9a07e670713dff460339
 channels:
   - conda-forge
   - defaults
 dependencies:
+<<<<<<< HEAD
   - make=4.3=h620ffc9_1
   - matplotlib=3.8.2=py311ha1ab1f8_0
   - numpy=1.26.3=py311he598dae_0
@@ -13,3 +18,20 @@ dependencies:
   - seaborn=0.13.1=hd8ed1ab_0
   
 prefix: /Users/Peizhi/miniconda3
+=======
+  - conda-content-trust
+  - conda-libmamba-solver
+  - conda==23.11.0
+  - git
+  - make
+  - menuinst
+  - openssh
+  - pandas
+  - pip
+  - python.app
+  - python=3.11
+  - seaborn
+  - setuptools
+  - wheel
+prefix: /usr/local/Caskroom/miniconda/base/envs/myenv
+>>>>>>> 2eefc649c9c76609930c9a07e670713dff460339
