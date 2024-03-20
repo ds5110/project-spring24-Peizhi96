@@ -12,6 +12,6 @@
 
 ## Roles and individual responsibilities
 
-* Peizhi Yan
-* Zican Hao
-* hicun Chen
+* Peizhi Yan : Data processing, technical documentation.
+* Zican Hao : Data processing, PPT preparation.
+* hicun Chen : Data processing, high-level description of results.
