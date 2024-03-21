@@ -1,9 +1,0 @@
-## Understanding the New England Groundfish Market and Its Competition with Northeast Atlantic Imports
-
-- The Gulf of Maine Research Institute (GMRI) Coastal and Marine Economics Lab is conducting a project to analyze the market dynamics and competition in the New England groundfish fishery. The project aims to provide insights into the factors influencing the decisions and behaviors of stakeholders in the coastal and marine resource sector, with a specific focus on the groundfish market.
-
-- New England has a significant groundfish fishery that supplies various whitefish species, including culturally important ones such as cod and haddock. However, the region also imports a substantial amount of whitefish from the Northeast Atlantic, creating direct competition between locally harvested and imported fish.
-
-- The primary objective of this project is to understand the market competition and relationships between the New England groundfish fishery and imports from the Northeast Atlantic, particularly from countries like Norway, Iceland, and Scotland. By analyzing data from sources such as the Portland Fish Exchange, NOAA Landings, and Foreign Trade databases, the project will examine the market dynamics, price fluctuations, and trade patterns.
-
-- The findings of this project will provide valuable information to stakeholders in the New England groundfish industry, including fishermen, processors, distributors, and policymakers. It will help them make informed decisions regarding resource management, market strategies, and policy development to ensure the sustainability and competitiveness of the local groundfish fishery in the face of international competition.
