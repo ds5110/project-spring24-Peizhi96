@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    {{ report_data.user_input.start_year }} - {{ report_data.user_input.start_year }} {{ report_data.report_title }}
+  </title>
+</head>
+
+<body>              
+  <h1>{{ report_data.report_title }}</h1>
+  <p>This report contains some data and a graph.</p>
+  <img src="{{ report_data.image_src }}" alt="Sample Plot">
+
+  <h2>Sections</h2>
+  <ul>
+    {% for section in report_data.sections %}
+    <li>{{ section }}</li>
+    {% endfor %}
+  </ul>
+
+</body>
+
+</html>

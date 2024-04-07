@@ -17,4 +17,5 @@ dependencies:
   - seaborn
   - setuptools
   - wheel
+  - jinja2
 prefix: /usr/local/Caskroom/miniconda/base/envs/myenv

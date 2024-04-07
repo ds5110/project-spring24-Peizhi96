@@ -7,3 +7,6 @@ north_atlantic:
 	python src/eda/north_eastern_by_year.py
 	python src/eda/north_eastern_by_country.py
 	python src/eda/north_eastern_by_product.py
+
+report:
+	python -b src/report_generator.py
