@@ -25,17 +25,17 @@ class ReportData:
 
     maine_maximum_market_value: YearValue
     maine_maximum_market_volumn: YearValue
-    ne_maximum_market_value: YearValue
-    ne_maximum_market_volumn: YearValue
+    na_maximum_market_value: YearValue
+    na_maximum_market_volumn: YearValue
     maine__maximum_average_market_value_per_pound: YearValue
-    ne__maximum_average_market_value_per_pound: YearValue
+    na__maximum_average_market_value_per_pound: YearValue
     maine_year_to_year_market_value_delta: list[DataDesc]
-    ne_year_to_year_market_value_delta: list[DataDesc]
+    na_year_to_year_market_value_delta: list[DataDesc]
 
     # figures
     maine_market_value_time_series_figure: str
-    ne_market_value_time_series_figure: str
+    na_market_value_time_series_figure: str
     maine_market_value_delta_time_series_figure: str
-    ne_market_value_delta_time_series_figure: str
-    maine_ne_market_value_compete_figure: str
-    maine_ne_market_volumn_compete_figure: str
+    na_market_value_delta_time_series_figure: str
+    maine_na_market_value_compete_figure: str
+    maine_na_market_volumn_compete_figure: str
