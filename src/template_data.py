@@ -15,6 +15,7 @@ class UserInput:
 @dataclass
 class YearValue:
     year: int
+    species: str
     value: float
 
 @dataclass
@@ -41,3 +42,4 @@ class ReportData:
         self.na_market_value_delta_time_series_figure: str = None
         self.maine_na_market_value_competition_figure: str = None
         self.maine_na_market_volume_competition_figure: str = None
+        self.maine_na_market_value_delta_table_figure: str = None
