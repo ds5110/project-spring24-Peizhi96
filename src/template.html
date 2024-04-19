@@ -3,21 +3,23 @@
 
 <head>
   <title>
-    {{ report_data.user_input.start_year }} - {{ report_data.user_input.start_year }} {{ report_data.report_title }}
+    {{ report_data.user_input.start_year }} - {{ report_data.user_input.end_year }} {{ report_data.report_title }}
   </title>
 </head>
 
+
 <body>              
   <h1>{{ report_data.report_title }}</h1>
-  <p>This report contains some data and a graph.</p>
-  <img src="{{ report_data.image_src }}" alt="Sample Plot">
 
-  <h2>Sections</h2>
-  <ul>
-    {% for section in report_data.sections %}
-    <li>{{ section }}</li>
-    {% endfor %}
-  </ul>
+  <img src= “report_data. maine_market_value_time_series_figure” alt = “maine_market_value_time_series_figure”>
+  <p>As shown in the figure above, from {{ report_data.user_input.start_year }} to {{ report_data.user_input.end_year }}, the market volume of Maine’s groundfish has a maximum of {{ report_data.maine_maximum_market_volume }} pounds, and the market value has a maximum of ${{ report_data.maine_maximum_market_value}}. The average market value per pound of Maine’s ground fish is ${{report_data.maine_maximum_market_value_per_pound}} per-pound.</p>
+  
+  <img src= “report_data.na_market_value_time_series_figure” alt = “na_market_value_time_series_figure”>
+  <p>In the same time period, the market volume of the groundfish that the US imported from Northeast Atlantic countries has a maximum of {{}}, and the market value has a maximum of 1000. The average market value per pound of Maine’s ground fish is 10$/pound. The average market value per pound of Maine’s ground fish is 10$/pound.</p>
+  
+  <img src= “report_data. maine_na_market_value_competition_figure” alt = “maine_na_market_value_competition_figure”>
+  <img src= “report_data. maine_na_market_volume_competition_table” alt = “maine_na_market_volume_competition_table”>
+  
 
 </body>
 
