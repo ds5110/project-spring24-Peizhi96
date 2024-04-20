@@ -1,4 +1,6 @@
-### Data Visualization
+# EDA
+
+## Data Visualization
 ```
 make landings
 ```
