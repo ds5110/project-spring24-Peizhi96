@@ -10,9 +10,11 @@ class DataDesc:
 
 @dataclass
 class UserInput:
-    start_year: int
-    end_year: int
-    report_name: str
+    def __init__(self):
+        self.start_year = None
+        self.end_year = None
+        self.report_name = None
+        self.region = None
 
 @dataclass
 class YearValue:
@@ -23,10 +25,10 @@ class YearValue:
 @dataclass
 class ReportData:
     def __init__(self):
-        self.report_id = None
-        self.user_input = None
+        self.report_id: uuid = None
+        self.user_input: UserInput = None
 
-        self.report_title: str = ''
+        self.report_title: str = None
 
         self.domestic_maximum_market_value: YearValue = None
         self.domestic_maximum_market_volume: YearValue = None

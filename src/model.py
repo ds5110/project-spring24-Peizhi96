@@ -3,11 +3,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from typing import List, Tuple
-from template_data import DataDesc, ReportData, UserInput, YearValue
+from template_data import DataDesc, ReportData, YearValue
 from util import allocate_figures_directory, preprocess, GROUND_FISH, Converter, Extractor
-
-# DOMESTIC_REGION = 'Maine'
-DOMESTIC_REGION = 'New England'
 
 def get_data_frame(startYear: str, endYear: str) -> Tuple[pd.DataFrame, pd.DataFrame]:
     df_domestic = preprocess(filename='FOSS_landings.csv', 
@@ -183,8 +180,13 @@ def table_plot(df_domestic: pd.DataFrame, df_na: pd.DataFrame, path: str, figure
     table_data = table_data.dropna(subset=['From'])
 
     # format cell values as integers
-    cell_text = [[f"{int(value):d}" if isinstance(value, (int, float)) else value for value in row] for row in table_data[
-        ['From', 'To', f'{DOMESTIC_REGION} Market Value Delta (USD)', 'North Atlantic Market Value Delta (USD)', f'{DOMESTIC_REGION} Market Volume (lb)', 'North Atlantic Market Volume (lb)']].values.tolist()]
+    cell_text = [
+        [
+            f'{int(value):,d}' if isinstance(value, (int, float)) and idx != 0 and idx != 1 else f'{int(value):d}'
+            for idx, value in enumerate(row)
+        ]
+        for row in table_data[['From', 'To', f'{DOMESTIC_REGION} Market Value Delta (USD)', 'North Atlantic Market Value Delta (USD)', f'{DOMESTIC_REGION} Market Volume (lb)', 'North Atlantic Market Volume (lb)']].values.tolist()
+    ]
 
     fig, ax = plt.subplots(figsize=(12, 8))
 
@@ -215,6 +217,7 @@ def table_plot(df_domestic: pd.DataFrame, df_na: pd.DataFrame, path: str, figure
 
     return figure_path
 
+
 def process(data: ReportData) -> None:
     id = data.report_id
     user_input = data.user_input
@@ -223,11 +226,13 @@ def process(data: ReportData) -> None:
     end_year = user_input.end_year
     report_name = user_input.report_name
 
+    global DOMESTIC_REGION
+    DOMESTIC_REGION = user_input.region
+
+    data.report_title = f'{DOMESTIC_REGION} and North Atlantic Groundfish Market Competition Analysis Report'
+
     # get dataframe
     df_domestic, df_north_atlantic = get_data_frame(start_year, end_year)
-    
-    print(df_domestic)
-    print(df_north_atlantic)
 
     # fill data
     # domestic max market value
@@ -276,14 +281,8 @@ def process(data: ReportData) -> None:
                                                                                   path,
                                                                                   f'{DOMESTIC_REGION}_na_market_competition_figure')
 
-    # domestic north altantic market value delta table
+    # domestic vs north altantic market value delta table
     data.domestic_na_market_value_delta_table_figure = table_plot(df_domestic, 
                                                                df_north_atlantic,
                                                                path,
                                                                f'{DOMESTIC_REGION}_na_market_value_delta_table_figure')
-
-
-data = ReportData()
-data.report_id = 4567
-data.user_input=UserInput(start_year=1999, end_year=2021, report_name="report")
-process(data)
