@@ -1,6 +1,6 @@
 # EDA
 
-## Data Visualization
+
 ```
 make landings
 ```
