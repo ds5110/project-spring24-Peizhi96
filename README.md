@@ -54,5 +54,42 @@ Peizhi Yan(Team Leader, Username: Peizhi96), Zhicun Chen, Zican Hao
 Link to EDA:
 [EDA](https://github.com/ds5110/project-spring24-Peizhi96/blob/80087e75ecc6f8877140cf9e51a4e2fc19bb4684/EDA.md)
 
+
 ## Technical Documentation
+### Running the Report Script
+To generate a report, execute the following command:
+
+```bash
+make demo_report
+```
+
+For customized reports, use:
+
+```bash
+make report
+```
+
+Follow the on-screen prompts to specify parameters:
+
+```bash
+Enter start year: 2000
+Enter end year: 2010
+Enter report name: MyReport
+Enter region (Maine or New England): New England
+```
+
+Parameters Explained
+- **Start Year**: The beginning year for the report analysis.
+- **End Year**: The ending year for the report analysis.
+- **Report Name**: Desired name for the report file.
+- **Region**: Landing regions, specifically Maine or New England (case sensitive).
+
+**Note**: The expected behavior is for your report to open and display in your browser. In case of any issues, such as user permission errors, manually open or drag the report_name.html file into your browser.
+
+## Challenge
+### Data Processing Challenge
+The data processing challenge is more formidable than initially anticipated. Ambiguities arise from certain rows within North Atlantic groundfish imports, where combined product names, such as COD/HADDOCK, obscure the identification of a single species. Dropping these rows outright is infeasible, given their significant market value and volume implications. Consequently, we adopt the first-occurring species as the definitive species for analysis.
+
+## Attribution
+Our report template draws inspiration from the findings presented in the ["2022 Commercial Fisheries Value Returns to Levels More in Line with Recent Years"](https://www.maine.gov/dmr/news/fri-03032023-1200-2022-commercial-fisheries-value-returns-levels-more-line-recent-years) report by the Maine Department of Marine Resources.
 
