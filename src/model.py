@@ -39,17 +39,13 @@ def find_max(df: pd.DataFrame, columnName: str) -> YearValue:
 
 def find_mean(df: pd.DataFrame, columnName: str) -> YearValue:
     mean_value = round(df[columnName].mean())
-    year = df.loc[df[columnName].idxmin(), 'Year']
-    species = df.loc[df[columnName].idxmin(), 'Species']
 
-    return YearValue(year, species, mean_value)
+    return YearValue(None, None, mean_value)
 
 def find_median(df: pd.DataFrame, columnName: str) -> YearValue:
     median_value = round(median(df[columnName]))
-    year = df.loc[df[columnName].idxmin(), 'Year']
-    species = df.loc[df[columnName].idxmin(), 'Species']
 
-    return YearValue(year, species, median_value)
+    return YearValue(None, None, median_value)
 
 def get_value_delta(df: pd.DataFrame, yearColumnName: str, speciesColumnName: str, valueColumnName: str) -> List[DataDesc]:
     # group by year and species and sum the values

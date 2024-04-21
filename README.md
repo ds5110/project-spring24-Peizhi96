@@ -54,4 +54,5 @@ Peizhi Yan(Team Leader, Username: Peizhi96), Zhicun Chen, Zican Hao
 Link to EDA:
 [EDA](https://github.com/ds5110/project-spring24-Peizhi96/blob/80087e75ecc6f8877140cf9e51a4e2fc19bb4684/EDA.md)
 
+## Technical Documentation
 
