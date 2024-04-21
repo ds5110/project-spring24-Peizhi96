@@ -92,4 +92,3 @@ The data processing challenge is more formidable than initially anticipated. Amb
 
 ## Attribution
 Our report template draws inspiration from the findings presented in the ["2022 Commercial Fisheries Value Returns to Levels More in Line with Recent Years"](https://www.maine.gov/dmr/news/fri-03032023-1200-2022-commercial-fisheries-value-returns-levels-more-line-recent-years) report by the Maine Department of Marine Resources.
-
