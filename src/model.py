@@ -1,9 +1,10 @@
 from matplotlib import ticker
+from numpy import median
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from typing import List, Tuple
-from template_data import DataDesc, ReportData, YearValue
+from template_data import DataDesc, ReportData, StatsPair, YearValue
 from util import allocate_figures_directory, preprocess, GROUND_FISH, Converter, Extractor
 
 def get_data_frame(startYear: str, endYear: str) -> Tuple[pd.DataFrame, pd.DataFrame]:
@@ -36,6 +37,20 @@ def find_max(df: pd.DataFrame, columnName: str) -> YearValue:
 
     return YearValue(max_year, species, max_value)
 
+def find_mean(df: pd.DataFrame, columnName: str) -> YearValue:
+    mean_value = round(df[columnName].mean())
+    year = df.loc[df[columnName].idxmin(), 'Year']
+    species = df.loc[df[columnName].idxmin(), 'Species']
+
+    return YearValue(year, species, mean_value)
+
+def find_median(df: pd.DataFrame, columnName: str) -> YearValue:
+    median_value = round(median(df[columnName]))
+    year = df.loc[df[columnName].idxmin(), 'Year']
+    species = df.loc[df[columnName].idxmin(), 'Species']
+
+    return YearValue(year, species, median_value)
+
 def get_value_delta(df: pd.DataFrame, yearColumnName: str, speciesColumnName: str, valueColumnName: str) -> List[DataDesc]:
     # group by year and species and sum the values
     df_grouped = df.groupby([yearColumnName, speciesColumnName])[valueColumnName].sum().reset_index()
@@ -65,6 +80,20 @@ def get_value_delta(df: pd.DataFrame, yearColumnName: str, speciesColumnName: st
     
     return value_delta_list
 
+def get_value_stats(df: pd.DataFrame, valueColumnName: str) -> List[StatsPair]:
+    # group by species and calculate mean and median of the values
+    df_grouped = df.groupby(['Species'])[valueColumnName].agg(['mean', 'median']).reset_index()
+    
+    year_value_list: List[StatsPair] = []
+    
+    for index, row in df_grouped.iterrows():
+        species = row['Species']
+        mean = round(row['mean'], 1)
+        median = round(row['median'], 1)
+        
+        year_value_list.append(StatsPair(species=species, mean=mean, median=median))
+    
+    return year_value_list
 
 def plot_market_value_time_series(df: pd.DataFrame, valueColumnName: str, path: str, figureName: str, title: str) -> str:
     plt.figure(figsize=(12, 8))
@@ -205,7 +234,7 @@ def table_plot(df_domestic: pd.DataFrame, df_na: pd.DataFrame, path: str, figure
                      bbox=bbox)
 
     table.auto_set_font_size(False)
-    table.set_fontsize(30)
+    table.set_fontsize(32)
     table.scale(1, 1)
 
     # Remove axis
@@ -237,16 +266,36 @@ def process(data: ReportData) -> None:
     # fill data
     # domestic max market value
     data.domestic_maximum_market_value = find_max(df_domestic, 'Dollars')
+    # mean value
+    data.domestic_average_market_value = find_mean(df_domestic, 'Dollars')
+    # median value
+    data.domestic_median_market_value = find_median(df_domestic, 'Dollars')
     # domestic max market volume
     data.domestic_maximum_market_volume = find_max(df_domestic, 'Pounds')
+    # mean volume
+    data.domestic_average_market_volume = find_mean(df_domestic, 'Pounds')
+    # median volume
+    data.domestic_median_market_volume = find_median(df_domestic, 'Pounds')
     # north atlantic market value
     data.na_maximum_market_value = find_max(df_north_atlantic, 'Value (USD)')
+    # mean
+    data.na_average_market_value = find_mean(df_north_atlantic, 'Value (USD)')
+    # median
+    data.na_median_market_value = find_median(df_north_atlantic, 'Value (USD)')
     # north atlantic market volume
     data.na_maximum_market_volume = find_max(df_north_atlantic, 'Pounds')
+    # mean
+    data.na_average_market_volume = find_mean(df_north_atlantic, 'Pounds')
+    # median
+    data.na_median_market_volume = find_median(df_domestic, 'Pounds')
     # domestic maximun market value per pound
     data.domestic_maximum_market_value_per_pound = find_max(df_domestic, 'ValuePerPound')
+    # mean and median
+    data.domestic_stats_market_value_per_pound = get_value_stats(df_domestic, 'ValuePerPound')
     # north atlantic market value per pound
     data.na_maximum_market_value_per_pound = find_max(df_north_atlantic, 'ValuePerPound')
+    # mean and median
+    data.na_stats_market_value_per_pound = get_value_stats(df_north_atlantic, 'ValuePerPound')
     # domestic year to year market value delta
     data.domestic_year_to_year_market_value_delta = get_value_delta(df_domestic, 'Year', 'Species', 'Dollars')
     # north atlantic year to year market value delta

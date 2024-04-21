@@ -43,6 +43,15 @@
             height: auto;
             margin-right: 10px;
         }
+
+        .table-style {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table-style th, .table-style td {
+            text-align: right;
+            padding-right: 20px;
+        }
     </style>
 </head>
 <body>
@@ -53,18 +62,48 @@
     </div>
 
     <div class="section">
-        <h2>Maximum Market Value</h2>
-        <p>In terms of market value, the {{ report_data.domestic_maximum_market_value.species }} species topped the charts in {{ report_data.user_input.region }} in {{ report_data.domestic_maximum_market_value.year }}, with a value of ${{ "{:,}".format(report_data.domestic_maximum_market_value.value) }}. Meanwhile, the North Atlantic region saw its highest market value in ${{ "{:,}".format(report_data.na_maximum_market_value.value) }} for the {{ report_data.na_maximum_market_value.species }} species, reaching ${{ "{:,}".format(report_data.na_maximum_market_value.value) }}.</p>
+      <h2>Market Value</h2>
+      <p>Reflecting on market dynamics across regions, the {{ report_data.domestic_maximum_market_value.species }} species stood prominently in {{ report_data.user_input.region }} during {{ report_data.domestic_maximum_market_value.year }}, commanding a market value of ${{ "{:,}".format(report_data.domestic_maximum_market_value.value) }}. Conversely, in the North Atlantic region, it was the {{ report_data.na_maximum_market_value.species }} species that held sway, achieving the highest market value of ${{ "{:,}".format(report_data.na_maximum_market_value.value) }}.</p>
+      <p>Moreover, the average market value in {{ report_data.user_input.region }} was ${{ "{:,}".format(report_data.domestic_average_market_value.value) }}, accompanied by a median value of ${{ "{:,}".format(report_data.domestic_median_market_value.value) }}. In contrast, the North Atlantic boasted an average market value of ${{ "{:,}".format(report_data.na_average_market_value.value) }}, with a corresponding median of ${{ "{:,}".format(report_data.na_median_market_value.value) }}.</p>
     </div>
 
     <div class="section">
-        <h2>Maximum Market Volume</h2>
-        <p>When it comes to market volume, the {{ report_data.domestic_maximum_market_volume.species }} species dominated the {{ report_data.user_input.region }} market in {{ report_data.domestic_maximum_market_volume.year }}, with a total volume of {{ "{:,}".format(report_data.domestic_maximum_market_volume.value) }} pounds. In the North Atlantic region, the {{ report_data.na_maximum_market_volume.species }} species saw its highest volume in {{ report_data.na_maximum_market_volume.year }}, reaching {{ "{:,}".format(report_data.na_maximum_market_volume.value) }} pounds.</p>
+      <h2>Market Volume</h2>
+      <p>Exploring market volumes, the {{ report_data.domestic_maximum_market_volume.species }} species took precedence in the {{ report_data.user_input.region }} market during {{ report_data.domestic_maximum_market_volume.year }}, boasting a total volume of {{ "{:,}".format(report_data.domestic_maximum_market_volume.value) }} pounds. In contrast, the North Atlantic region experienced its peak volume with the {{ report_data.na_maximum_market_volume.species }} species, reaching {{ "{:,}".format(report_data.na_maximum_market_volume.value) }} pounds.</p>
+      <p>Furthermore, the mean market volume in {{ report_data.user_input.region }} amounted to {{ "{:,}".format(report_data.domestic_average_market_volume.value) }} pounds, accompanied by a median volume of {{ "{:,}".format(report_data.domestic_median_market_volume.value) }} pounds. Conversely, in the North Atlantic, the mean market volume stood at {{ "{:,}".format(report_data.na_average_market_volume.value) }} pounds, with a corresponding median volume of {{ "{:,}".format(report_data.na_median_market_volume.value) }} pounds.</p>
     </div>
 
     <div class="section">
-        <h2>Maximum Market Value per Pound</h2>
-        <p>To determine the most valuable species per pound, we analyzed the market value per pound for each region. In {{ report_data.user_input.region }}, the {{ report_data.domestic_maximum_market_value_per_pound.species }} species fetched the highest price per pound in {{ report_data.domestic_maximum_market_value_per_pound.year }}, with a value of ${{ "{:,}".format(report_data.domestic_maximum_market_value_per_pound.value) }}. The North Atlantic region, on the other hand, saw its peak value per pound for the {{ report_data.na_maximum_market_value_per_pound.species }} species in {{ report_data.na_maximum_market_value_per_pound.year }}, reaching ${{ "{:,}".format(report_data.na_maximum_market_value_per_pound.value) }}.</p>
+      <h2>Market Value per Pound</h2>
+      <p>To determine the most valuable species per pound, we analyzed the market value per pound for each region. In {{ report_data.user_input.region }}, the {{ report_data.domestic_maximum_market_value_per_pound.species }} species fetched the highest price per pound in {{ report_data.domestic_maximum_market_value_per_pound.year }}, with a value of ${{ "{:,}".format(report_data.domestic_maximum_market_value_per_pound.value) }}. The North Atlantic region, on the other hand, saw its peak value per pound for the {{ report_data.na_maximum_market_value_per_pound.species }} species in {{ report_data.na_maximum_market_value_per_pound.year }}, reaching ${{ "{:,}".format(report_data.na_maximum_market_value_per_pound.value) }}.</p>
+      
+      <table class="table-style">
+        <tr>
+            <th>Region</th>
+            <th>Species</th>
+            <th>Mean Market Value per Pound (USD)</th>
+            <th>Median Market Value per Pound (USD)</th>
+        </tr>
+        {% for stats_pair in report_data.domestic_stats_market_value_per_pound %}
+            <tr>
+                <td>{{ report_data.user_input.region }}</td>
+                <td>{{ stats_pair.species }}</td>
+                <td>{{ "{:,.1f}".format(stats_pair.mean) }}</td>
+                <td>{{ "{:,.1f}".format(stats_pair.median) }}</td>
+            </tr>
+            {% if loop.last %}
+                <tr><td colspan="4"><hr></td></tr>
+            {% endif %}
+        {% endfor %}
+        {% for stats_pair in report_data.na_stats_market_value_per_pound %}
+            <tr>
+                <td>North Atlantic</td>
+                <td>{{ stats_pair.species }}</td>
+                <td>{{ "{:,.1f}".format(stats_pair.mean) }}</td>
+                <td>{{ "{:,.1f}".format(stats_pair.median) }}</td>
+            </tr>
+        {% endfor %}
+      </table>
     </div>
 
     <div class="section">
@@ -83,16 +122,16 @@
     </div>
 
     <div class="section">
-      <h2>Year to Year Market Value/Volume Delta Analysis</h2>
-      <h3>Market Value Delta per Species</h3>
-        <p>The market value delta time series charts illustrate the year-to-year changes in market value for each region and species, allowing for a better understanding of fluctuations and potential market shifts.</p>
+      <h2>Year to Year Market Value and Volume Delta Analysis</h2>
+      <h3>Market Value Change per Species</h3>
+        <p>The market value change time series charts illustrate the year-to-year changes in market value for each region and species, allowing for a better understanding of fluctuations and potential market shifts.</p>
         <div class="image-container">
             <img class="figure" src="{{ report_data.domestic_market_value_delta_time_series_figure }}" alt="Domestic Market Value Delta Time Series">
             <img class="figure" src="{{ report_data.na_market_value_delta_time_series_figure }}" alt="North Atlantic Market Value Delta Time Series">
         </div>
 
-        <h3>Total Market Value/Volume Delta Table</h3>
-        <p>The market value delta table below presents a tabular representation of the year-to-year changes in market value for both regions, allowing for easy comparison and analysis of market fluctuations.</p>
+        <h3>Total Market Value and Volume Change Table</h3>
+        <p>The market value change table below presents a tabular representation of the year-to-year changes in market value for both regions, allowing for easy comparison and analysis of market fluctuations.</p>
         <div class="scrollable-table" style="height: 400px; overflow-y: auto;">
           <img class="figure" src="{{ report_data.domestic_na_market_value_delta_table_figure }}" alt="Domestic vs. North Atlantic Market Value Delta Table">
       </div>
